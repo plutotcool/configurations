@@ -1,0 +1,14 @@
+{
+  "name": "@plutotcool/typescript",
+  "version": "1.0.0-alpha.0",
+  "description": "Base typescript configs we use by default.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "typescript",
+    "plutotcool"
+  ],
+  "author": "bastienrobert <bastien@plutot.cool>",
+  "license": "MIT"
+}

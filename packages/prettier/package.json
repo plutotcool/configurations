@@ -1,0 +1,22 @@
+{
+  "name": "@plutotcool/prettier",
+  "version": "1.0.0-alpha.0",
+  "description": "Base prettier config we use by default",
+  "main": ".prettierrc.json",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com:plutotcool/base.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "prettier",
+    "plutotcool"
+  ],
+  "author": "bastienrobert <bastien@plutot.cool>",
+  "license": "MIT"
+}
