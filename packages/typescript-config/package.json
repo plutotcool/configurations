@@ -6,8 +6,8 @@
   "repository": "plutotcool/configurations",
   "homepage": "https://github.com/plutotcool/configurations/tree/main/packages/typescript-config",
   "license": "MIT",
-  "author": "Bastien Robert <bastien@plutot.cool>",
   "contibutors": [
+    "Bastien Robert <bastien@plutot.cool>",
     "Julien Dargelos <julien@plutot.cool>"
   ],
   "keywords": [
