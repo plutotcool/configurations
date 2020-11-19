@@ -1,24 +1,14 @@
-<h1 align="center">Configurations</h1>
+# Configurations
 
-<h4 align="center">Base configurations we use by default</h4>
+> Base configurations for plutot.cool projects.
 
-<blockquote align="center">
-  <em>These packages define the rules and style that we choose to follow.</em><br />
-  <em>Because <b>this is the way</b>.</em>
-</blockquote>
+[![current github tag](https://img.shields.io/github/tag/plutotcool/configurations.svg)](https://github.com/plutotcool/configurations/tags)
 
-<p align="center">
-  <a aria-label="current github tag" href="https://github.com/plutotcool/configurations/tags">
-    <img src="https://img.shields.io/github/tag/plutotcool/configurations.svg">
-  </a>
-  <a aria-label="license" href="https://github.com/plutotcool/configurations/blob/master/license">
-    <img src="https://img.shields.io/github/license/plutotcool/configurations.svg" alt="">
-  </a>
-</p>
+[![license](https://img.shields.io/github/license/plutotcool/configurations.svg)](https://github.com/plutotcool/configurations/blob/master/license)
 
 ## Packages
 
 | name                                                                                                   | description                     |
 | ------------------------------------------------------------------------------------------------------ | ------------------------------- |
-| [@plutotcool/typescript](https://github.com/plutotcool/configurations/blob/master/packages/typescript) | Basic typescript configuration. |
-| [@plutotcool/prettier](https://github.com/plutotcool/configurations/blob/master/packages/prettier)     | Basic prettier configurations.  |
+| [@plutotcool/typescript-config](https://github.com/plutotcool/configurations/blob/master/packages/typescript) | Base typescript configuration. |
+| [@plutotcool/prettier-config](https://github.com/plutotcool/configurations/blob/master/packages/prettier)     | Base prettier configurations.  |
