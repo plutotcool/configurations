@@ -1,19 +1,20 @@
 {
+  "private": true,
   "name": "@plutotcool/configurations",
-  "private": "true",
   "version": "1.0.0-alpha.0",
-  "description": "Base configurations we use by default.",
-  "main": "index.js",
-  "prettier": "./packages/prettier/.prettierrc.json",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "description": "Base configurations for plutot.cool projects.",
+  "repository": "plutotcool/configurations",
+  "homepage": "https://github.com/plutotcool/configurations",
+  "license": "MIT",
+  "prettier": "./packages/prettier-config/.prettierrc.json",
   "keywords": [
     "configurations",
     "plutotcool"
   ],
-  "author": "",
-  "license": "MIT",
+  "scripts": {
+    "postinstall": "lerna bootstrap",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "devDependencies": {
     "lerna": "^3.22.1"
   }

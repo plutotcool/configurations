@@ -1,0 +1,20 @@
+{
+  "name": "@plutotcool/prettier-config",
+  "version": "1.0.0-alpha.0",
+  "description": "Base prettier configuration for plutot.cool projects.",
+  "main": ".prettierrc.json",
+  "repository": "plutotcool/configurations",
+  "homepage": "https://github.com/plutotcool/configurations/tree/main/packages/prettier-config",
+  "license": "MIT",
+  "contibutors": [
+    "Bastien Robert <bastien@plutot.cool>",
+    "Julien Dargelos <julien@plutot.cool>"
+  ],
+  "keywords": [
+    "prettier",
+    "plutotcool"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

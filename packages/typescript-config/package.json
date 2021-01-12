@@ -1,0 +1,20 @@
+{
+  "name": "@plutotcool/typescript-config",
+  "version": "1.0.0-alpha.0",
+  "description": "Base typescript configuration for plutot.cool projects.",
+  "main": "tsconfig.json",
+  "repository": "plutotcool/configurations",
+  "homepage": "https://github.com/plutotcool/configurations/tree/main/packages/typescript-config",
+  "license": "MIT",
+  "contibutors": [
+    "Bastien Robert <bastien@plutot.cool>",
+    "Julien Dargelos <julien@plutot.cool>"
+  ],
+  "keywords": [
+    "typescript",
+    "plutotcool"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
