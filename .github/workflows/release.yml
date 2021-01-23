@@ -16,7 +16,7 @@ jobs:
           git config --local user.email "plutotcool+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
       - run: yarn
-      - uses: plutotcool/release@v1.0.2
+      - uses: plutotcool/release@hotfix/lerna-publish
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           npm_token: ${{ secrets.NPM_TOKEN }}
