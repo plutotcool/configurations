@@ -1,6 +1,6 @@
 {
   "name": "@plutotcool/prettier-config",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-beta",
   "description": "Base prettier configuration for plutot.cool projects.",
   "main": ".prettierrc.json",
   "repository": "plutotcool/configurations",

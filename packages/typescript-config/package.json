@@ -1,6 +1,6 @@
 {
   "name": "@plutotcool/typescript-config",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-beta",
   "description": "Base typescript configuration for plutot.cool projects.",
   "main": "tsconfig.json",
   "repository": "plutotcool/configurations",
