@@ -1,15 +1,18 @@
 {
   "name": "@plutotcool/typescript-config",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-beta",
   "description": "Base typescript configuration for plutot.cool projects.",
   "main": "tsconfig.json",
   "repository": "plutotcool/configurations",
-  "homepage": "https://github.com/plutotcool/configurations/tree/main/packages/typescript-config",
+  "homepage": "https://github.com/plutotcool/configurations/tree/main/packages/typescript-config#readme",
   "license": "MIT",
-  "contibutors": [
-    "Bastien Robert <bastien@plutot.cool>",
+  "author": "Bastien Robert <bastien@plutot.cool>",
+  "contributors": [
     "Julien Dargelos <julien@plutot.cool>"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "typescript",
     "plutotcool"
