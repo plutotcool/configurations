@@ -8,7 +8,7 @@
 
 ## Packages
 
-| name                                                                                                   | description                     |
-| ------------------------------------------------------------------------------------------------------ | ------------------------------- |
-| [@plutotcool/typescript-config](https://github.com/plutotcool/configurations/blob/master/packages/typescript-config) | Base typescript configuration. |
-| [@plutotcool/prettier-config](https://github.com/plutotcool/configurations/blob/master/packages/prettier-config)     | Base prettier configurations.  |
+| name                                                                                                                 | description               |
+| -------------------------------------------------------------------------------------------------------------------- | ------------------------- |
+| [@plutotcool/typescript-config](https://github.com/plutotcool/configurations/blob/master/packages/typescript-config) | Typescript configuration. |
+| [@plutotcool/prettier-config](https://github.com/plutotcool/configurations/blob/master/packages/prettier-config)     | Prettier configurations.  |
