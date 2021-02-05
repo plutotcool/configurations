@@ -1,4 +1,4 @@
-# Prettier
+# Prettier configuration
 
 > Base prettier configuration for plutot.cool projects.
 

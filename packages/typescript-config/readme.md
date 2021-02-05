@@ -1,4 +1,4 @@
-# Typescript
+# Typescript configuration
 
 > Base typescript configuration for plutot.cool projects.
 

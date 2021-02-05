@@ -4,10 +4,10 @@
   "description": "Base prettier configuration for plutot.cool projects.",
   "main": ".prettierrc.json",
   "repository": "plutotcool/configurations",
-  "homepage": "https://github.com/plutotcool/configurations/tree/main/packages/prettier-config",
+  "homepage": "https://github.com/plutotcool/configurations/tree/main/packages/prettier-config#readme",
   "license": "MIT",
   "author": "Bastien Robert <bastien@plutot.cool>",
-  "contibutors": [
+  "contributors": [
     "Julien Dargelos <julien@plutot.cool>"
   ],
   "keywords": [
