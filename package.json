@@ -13,9 +13,12 @@
   ],
   "scripts": {
     "postinstall": "lerna bootstrap",
+    "lint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.21.0",
+    "eslint": "^7.24.0",
     "lerna": "^3.22.1",
     "prettier": "^2.2.1",
     "typescript": "^4.2.4"

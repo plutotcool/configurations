@@ -1,0 +1,35 @@
+{
+  "name": "@plutotcool/eslint-config",
+  "version": "1.0.0",
+  "description": "Base eslint configuration for plutot.cool projects.",
+  "main": "index.js",
+  "repository": "plutotcool/configurations",
+  "homepage": "https://github.com/plutotcool/configurations/tree/main/packages/eslint-config#readme",
+  "license": "MIT",
+  "author": "Bastien Robert <bastien@plutot.cool>",
+  "contributors": [
+    "Julien Dargelos <julien@plutot.cool>"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "eslint",
+    "plutotcool"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "peerDependencies": {
+    "@typescript-eslint/eslint-plugin": ">= 4.21.0",
+    "eslint": ">= 7",
+    "eslint-plugin-react": ">= 7.23.0",
+    "eslint-plugin-react-hooks": ">= 4.2.0",
+    "prettier": ">= 2",
+    "typescript": ">= 4"
+  },
+  "dependencies": {
+    "@typescript-eslint/parser": "^4.21.0",
+    "eslint-config-prettier": "^8.1.0"
+  }
+}

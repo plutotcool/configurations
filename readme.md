@@ -11,4 +11,5 @@
 | name                                                                                                                 | description               |
 | -------------------------------------------------------------------------------------------------------------------- | ------------------------- |
 | [@plutotcool/typescript-config](https://github.com/plutotcool/configurations/blob/master/packages/typescript-config) | Typescript configuration. |
-| [@plutotcool/prettier-config](https://github.com/plutotcool/configurations/blob/master/packages/prettier-config)     | Prettier configurations.  |
+| [@plutotcool/prettier-config](https://github.com/plutotcool/configurations/blob/master/packages/prettier-config)     | Prettier configuration.   |
+| [@plutotcool/eslint-config](https://github.com/plutotcool/configurations/blob/master/packages/eslint-config)         | ESlint configurations.    |
