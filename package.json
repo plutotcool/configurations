@@ -1,7 +1,6 @@
 {
   "private": true,
   "name": "@plutotcool/configurations",
-  "version": "1.0.0-beta",
   "description": "Base configurations for plutot.cool projects.",
   "repository": "plutotcool/configurations",
   "homepage": "https://github.com/plutotcool/configurations",
@@ -16,6 +15,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "lerna": "^3.22.1"
+    "lerna": "^3.22.1",
+    "prettier": "^2.2.1",
+    "typescript": "^4.2.4"
   }
 }
