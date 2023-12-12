@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "@plutotcool/configurations",
-  "version": "1.0.0-beta",
+  "version": "0.0.0",
   "description": "Base configurations for plutot.cool projects.",
   "repository": "plutotcool/configurations",
   "homepage": "https://github.com/plutotcool/configurations",
@@ -12,6 +12,7 @@
     "plutotcool"
   ],
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "postinstall": "lerna bootstrap",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

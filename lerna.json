@@ -1,7 +1,5 @@
 {
-  "packages": [
-    "packages/*"
-  ],
+  "packages": ["packages/*"],
   "command": {
     "publish": {
       "registry": "https://npm.pkg.github.com"
@@ -10,6 +8,6 @@
       "message": "release: publish %s"
     }
   },
-  "npmClient": "yarn",
+  "npmClient": "pnpm",
   "version": "1.0.0"
 }

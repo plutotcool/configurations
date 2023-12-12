@@ -5,7 +5,7 @@
 ## Installation
 
 ```bash
-yarn add -D @plutotcool/typescript-config
+pnpm i -D @plutotcool/typescript-config
 ```
 
 In tsconfig.json
