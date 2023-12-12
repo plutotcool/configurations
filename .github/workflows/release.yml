@@ -1,3 +1,5 @@
+name: Release
+
 on:
   push:
     branches:
@@ -5,18 +7,35 @@ on:
 
 jobs:
   release:
+    name: Release
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
+      - name: Setup pnpm 8
+        uses: pnpm/action-setup@v2
         with:
-          node-version: 12
+          version: 8
+
+      - name: Setup Node.js 20.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: 20.x
+
       - name: Configure git
         run: |
           git config --local user.email "plutotcool+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-      - run: pnpm i
-      - uses: plutotcool/release@v1.1.0
+
+      - name: Install Dependencies
+        run: pnpm i
+
+      - name: Create Release Pull Request or Publish to npm
+        id: changesets
+        uses: changesets/action@v1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          npm_token: ${{ secrets.NPM_TOKEN }}
+          publish: pnpm release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
