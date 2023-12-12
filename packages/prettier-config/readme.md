@@ -5,7 +5,7 @@
 ## Installation
 
 ```bash
-yarn add -D @plutotcool/prettier-config
+pnpm i -D @plutotcool/prettier-config
 ```
 
 In package.json
