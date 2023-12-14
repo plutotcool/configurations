@@ -1,0 +1,12 @@
+{
+  "extends": [
+    "@plutotcool/eslint-config-typescript",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended"
+  ],
+  "plugins": ["react", "react-hooks"],
+  "rules": {
+    "react/no-children-prop": "error",
+    "react-hooks/exhaustive-deps": "error"
+  }
+}

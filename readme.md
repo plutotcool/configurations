@@ -8,10 +8,13 @@
 
 ## Packages
 
-| name                                                                                                                 | description               |
-| -------------------------------------------------------------------------------------------------------------------- | ------------------------- |
-| [@plutotcool/typescript-config](https://github.com/plutotcool/configurations/blob/master/packages/typescript-config) | Typescript configuration. |
-| [@plutotcool/prettier-config](https://github.com/plutotcool/configurations/blob/master/packages/prettier-config)     | Prettier configurations.  |
+| name                                                                                                                               | description                       |
+| ---------------------------------------------------------------------------------------------------------------------------------- | --------------------------------- |
+| [@plutotcool/typescript-config](https://github.com/plutotcool/configurations/blob/master/packages/typescript-config)               | Typescript configuration.         |
+| [@plutotcool/prettier-config](https://github.com/plutotcool/configurations/blob/master/packages/prettier-config)                   | Prettier configurations.          |
+| [@plutotcool/eslint-config-core](https://github.com/plutotcool/configurations/blob/master/packages/eslint-config-core)             | ESlint core configurations.       |
+| [@plutotcool/eslint-config-typescript](https://github.com/plutotcool/configurations/blob/master/packages/eslint-config-typescript) | ESlint typescript configurations. |
+| [@plutotcool/eslint-config-react](https://github.com/plutotcool/configurations/blob/master/packages/eslint-config-react)           | ESlint react configurations.      |
 
 ## Release
 
@@ -19,4 +22,4 @@ We are using [changesets](https://github.com/changesets/changesets) to create "r
 
 1. [Create a separate branch](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/managing-branches) for your changes.
 2. Create a changeset by running `pnpm changeset`. [More about changesets](https://github.com/atlassian/changesets).
-3. Push your branch and open a PR
+3. Push your branch and open a PR.
