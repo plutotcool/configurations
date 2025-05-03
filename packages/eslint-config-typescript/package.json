@@ -1,0 +1,31 @@
+{
+  "name": "@plutotcool/eslint-config-typescript",
+  "version": "1.0.0",
+  "description": "Base eslint typescript configuration for plutot.cool projects.",
+  "main": ".eslintrc.json",
+  "repository": "plutotcool/configurations",
+  "homepage": "https://github.com/plutotcool/configurations/tree/main/packages/eslint-config-typescript#readme",
+  "license": "MIT",
+  "author": "Bastien Robert <bastien@plutot.cool>",
+  "contributors": [
+    "Julien Dargelos <julien@plutot.cool>"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "eslint",
+    "typescript",
+    "plutotcool"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@plutotcool/eslint-config-core": "^1.0.0"
+  },
+  "peerDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6",
+    "@typescript-eslint/parser": "^6"
+  }
+}

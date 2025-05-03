@@ -1,0 +1,29 @@
+{
+  "name": "@plutotcool/eslint-config-core",
+  "version": "1.0.0",
+  "description": "Base eslint core configuration for plutot.cool projects.",
+  "main": ".eslintrc.json",
+  "repository": "plutotcool/configurations",
+  "homepage": "https://github.com/plutotcool/configurations/tree/main/packages/eslint-config-core#readme",
+  "license": "MIT",
+  "author": "Bastien Robert <bastien@plutot.cool>",
+  "contributors": [
+    "Julien Dargelos <julien@plutot.cool>"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "eslint",
+    "plutotcool"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "peerDependencies": {
+    "eslint": "^8",
+    "eslint-config-prettier": "^9",
+    "eslint-plugin-prettier": "^5",
+    "prettier": "^3"
+  }
+}
