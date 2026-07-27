@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.2.0
+
+### Minor Changes
+
+- [#14](https://github.com/plutotcool/configurations/pull/14) [`ec22503`](https://github.com/plutotcool/configurations/commit/ec225036d51302440cdbfff613f5d5ee7c082071) Thanks [@bastienrobert](https://github.com/bastienrobert)! - replace jsxBracketSameLine with bracketSameLine in prettierc
+
 ## 1.1.0
 
 ### Minor Changes
