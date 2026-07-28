@@ -3,8 +3,15 @@
   "version": "1.0.0",
   "description": "Base typescript configuration for plutot.cool projects.",
   "main": "tsconfig.json",
-  "repository": "plutotcool/configurations",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/plutotcool/configurations.git",
+    "directory": "packages/typescript-config"
+  },
   "homepage": "https://github.com/plutotcool/configurations/tree/main/packages/typescript-config#readme",
+  "bugs": {
+    "url": "https://github.com/plutotcool/configurations/issues"
+  },
   "license": "MIT",
   "author": "Bastien Robert <bastien@plutot.cool>",
   "contributors": [
@@ -19,5 +26,12 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "changelog": {
+    "templates": {
+      "commitMessage": "chore(release): @plutotcool/typescript-config@{{newVersion}}",
+      "tagMessage": "@plutotcool/typescript-config@{{newVersion}}",
+      "tagBody": "@plutotcool/typescript-config@{{newVersion}}"
+    }
   }
 }

@@ -15,8 +15,16 @@
 
 ## Release
 
-We are using [changesets](https://github.com/changesets/changesets) to create "release intents" for our packages. When those pop up on main a release PR gets prepared automatically and once it gets merged actual release happen (also automatically).
+We are using [changelogen](https://github.com/unjs/changelogen) to version our packages. Each package is versioned independently from the [conventional commits](https://www.conventionalcommits.org) landed since its last release tag (`@plutotcool/<package>@<version>`).
 
 1. [Create a separate branch](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/managing-branches) for your changes.
-2. Create a changeset by running `pnpm changeset`. [More about changesets](https://github.com/atlassian/changesets).
-3. Push your branch and open a PR
+2. Push your branch and open a PR, using conventional commit messages (`feat:`, `fix:`, …) — they end up in the changelog.
+3. Once merged, run the [Release workflow](https://github.com/plutotcool/configurations/actions/workflows/release.yml) from the GitHub UI, pick the package to release and, optionally, force a release type (otherwise it is inferred from the commits).
+
+The workflow bumps the version, updates the package changelog, commits, tags, pushes, creates the GitHub release and publishes to both [npm](https://www.npmjs.com/org/plutotcool) and GitHub Packages.
+
+To release from your machine instead:
+
+```sh
+pnpm release --dir packages/<package> --from "@plutotcool/<package>@<last-version>"
+```

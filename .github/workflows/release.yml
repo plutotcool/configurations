@@ -1,41 +1,128 @@
 name: Release
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+    inputs:
+      package:
+        description: 'Package to release'
+        required: true
+        type: choice
+        options:
+          - prettier-config
+          - typescript-config
+      release-type:
+        description: 'Release type'
+        required: false
+        default: ''
+        type: choice
+        options:
+          - ''
+          - patch
+          - minor
+          - major
+          - prerelease
+          - prepatch
+          - preminor
+          - premajor
 
 jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      id-token: write
+      packages: write
+
+    env:
+      PACKAGE_DIR: packages/${{ inputs.package }}
+
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v2
-
-      - name: Setup pnpm 8
-        uses: pnpm/action-setup@v2
+      - name: Checkout repository
+        uses: actions/checkout@v5
         with:
-          version: 8
-
-      - name: Setup Node.js 20.x
-        uses: actions/setup-node@v2
-        with:
-          node-version: 20.x
-
-      - name: Configure git
+          fetch-depth: 0
+      - name: Setup git identity
         run: |
           git config --local user.email "plutotcool+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-
-      - name: Install Dependencies
-        run: pnpm i
-
-      - name: Create Release Pull Request or Publish to npm
-        id: changesets
-        uses: changesets/action@v1
+      - name: Setup node
+        uses: actions/setup-node@v4
         with:
-          publish: pnpm release
+          node-version-file: '.node-version'
+      - name: Enable corepack
+        run: corepack enable
+      - name: Install dependencies
+        run: pnpm install
+      - name: Resolve release range
+        id: range
+        run: |
+          name="$(node -p "require('./$PACKAGE_DIR/package.json').name")"
+          from="$(git tag --list "$name@*" --sort=-v:refname | head -n1)"
+          if [[ -z "$from" ]]; then
+            # No previous tag for this package: start from the initial commit
+            from="$(git rev-list --max-parents=0 HEAD | tail -n1)"
+          fi
+          echo "name=$name" >> "$GITHUB_OUTPUT"
+          echo "from=$from" >> "$GITHUB_OUTPUT"
+          echo "Releasing $name from $from"
+      - name: Release package
+        run: >
+          pnpm release
+          --dir "$PACKAGE_DIR"
+          --from "${{ steps.range.outputs.from }}"
+          ${{ inputs.release-type && format('--{0}', inputs.release-type) || '' }}
+      - name: Resolve release metadata
+        id: release
+        run: |
+          version="$(node -p "require('./$PACKAGE_DIR/package.json').version")"
+          if [[ "$version" == *-* ]]; then
+            prerelease="${version#*-}"   # 0.1.0-rc.1 -> rc.1 ; 1.0.0-0 -> 0
+            tag="${prerelease%%.*}"      # rc.1 -> rc          ; 0 -> 0
+            [[ "$tag" =~ ^[0-9]+$ ]] && tag="next"   # changelogen prerelease numérique
+            echo "prerelease=true" >> "$GITHUB_OUTPUT"
+          else
+            tag="latest"
+            echo "prerelease=false" >> "$GITHUB_OUTPUT"
+          fi
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          echo "git-tag=${{ steps.range.outputs.name }}@$version" >> "$GITHUB_OUTPUT"
+          echo "dist-tag=$tag" >> "$GITHUB_OUTPUT"
+          echo "Resolved dist-tag: $tag"
+      - name: Create GitHub release
+        run: |
+          notes="$(awk -v header="## $GIT_TAG" '
+            $0 == header { capture = 1; next }
+            capture && /^## / { exit }
+            capture { print }
+          ' "$PACKAGE_DIR/CHANGELOG.md")"
+          gh release create "$GIT_TAG" \
+            --title "$GIT_TAG" \
+            --notes "${notes:-$GIT_TAG}" \
+            ${{ steps.release.outputs.prerelease == 'true' && '--prerelease' || '' }}
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GIT_TAG: ${{ steps.release.outputs.git-tag }}
+      - name: Setup node for npm
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.node-version'
+          registry-url: 'https://registry.npmjs.org'
+          scope: '@plutotcool'
+      - name: Publish to npm
+        working-directory: packages/${{ inputs.package }}
+        run: npm publish --access public --tag ${{ steps.release.outputs.dist-tag }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Setup node for GitHub Packages
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.node-version'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@plutotcool'
+      - name: Publish to GitHub Packages
+        working-directory: packages/${{ inputs.package }}
+        run: npm publish --registry=https://npm.pkg.github.com --tag ${{ steps.release.outputs.dist-tag }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
